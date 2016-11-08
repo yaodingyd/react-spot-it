@@ -1,0 +1,92 @@
+.hidden { 
+  display: none;
+}
+
+.input-list {
+  column-count: 4;
+  list-style: none;
+}
+
+.input-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.modal-dialog {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.refresh {
+    animation: spin 1s infinite ease;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media print {
+    @page {
+        size: landscape
+    }
+
+    body * {
+        visibility: hidden;
+    }
+    .output-section,
+    .output-section * {
+        visibility: visible;
+    }
+
+    .output-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 2px solid #C4DFF6;
+        min-height: 100%;
+    }
+    
+    .result-array {
+        display: flex;
+        font-size: 20px;
+        border: 2px solid crimson;
+        text-align: center;
+        box-shadow: 0 0 1px 1px mediumslateblue;
+        margin: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        flex-basis: 45%;
+        margin-bottom: 2rem;
+        page-break-inside: avoid;
+        page-break-after: always;
+        page-break-before: avoid;
+        position: relative;
+    }
+
+    .result-array-item {
+        flex: 1 0 50%;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        page-break-before: avoid;
+    }
+
+    .fifth-item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
