@@ -1,6 +1,6 @@
 (function(){
 function spotIt(input, callback) {
-    if(input.length >=14 && input.length < 20){
+    if(input.length >=14 && input.length < 19){
         return specialCase(input);
     }
 
@@ -82,11 +82,8 @@ function spotIt(input, callback) {
         }
     }
 
-    if(callback && typeof callback === 'function'){
-        callback(refinedResults);
-    } else {
-        return refinedResults;
-    }
+    
+    return refinedResults;
 
 }
 

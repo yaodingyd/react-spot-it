@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import List from './List';
 import ResultList from './ResultList';
 import Spinner from './Spinner';
+import Warning from './Warning';
 import {Button, Label} from 'react-bootstrap';
 
 class ListApp extends Component {
@@ -12,7 +13,8 @@ class ListApp extends Component {
             result: [],
             imageSrc: '',
             remove: '',
-            showWarning: false,
+            showError: false,
+            errorMessage: '',
             showSpinner: false
         };
     }
@@ -32,6 +34,7 @@ class ListApp extends Component {
         <List items={this.state.items} />
         <ResultList items={this.state.result} />
         <Spinner show={this.state.showSpinner} />
+        <Warning show={this.state.showError} message={this.state.errorMessage} callbackOwner = {()=> this.setState({showError: false})}/>
       </div>
     );
   }
@@ -83,15 +86,21 @@ class ListApp extends Component {
           result: window.spotIt(prevState.items.map((item)=>{ return item.imageSrc; }))    
       }));*/
        setTimeout(()=>{
-           window.spotIt(this.state.items.map((item)=>{ return item.imageSrc; }), (result) => {
-            this.setState({
-                result: result,
-                showSpinner: false
-            })
-       }) 
+           let result = window.spotIt(this.state.items.map((item)=>{ return item.imageSrc; }))
+           if(result.length === 0){
+               this.setState({
+                   showSpinner: false,
+                   showError: true,
+                   errorMessage: 'Your input generate 0 set of result. Please either add or remove symbol, and try again.'
+               })
+           } else {
+                this.setState({
+                    result: result,
+                    showSpinner: false
+             });
+           }
+
        }, 0);
-       
-       
   }
 
   handlePrint = () => {

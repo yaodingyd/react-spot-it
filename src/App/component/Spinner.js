@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Modal, Glyphicon} from 'react-bootstrap';
 
 class Spinner extends Component {
@@ -14,6 +14,10 @@ class Spinner extends Component {
             </div>
         );
     }
+}
+
+Spinner.propTypes = {
+    show: PropTypes.bool
 }
 
 export default Spinner;
