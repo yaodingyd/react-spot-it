@@ -10,8 +10,8 @@ import './App/css/App.css';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/project/build/" component={App} />
-    <Route path="/project/build/about" component={About} />
+    <Route path="/react-spot-it/" component={App} />
+    <Route path="/react-spot-it/about" component={About} />
   </Router>
   ), document.getElementById('root')
 );

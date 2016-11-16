@@ -18,5 +18,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://yaodingyd.github.io/project/build/"
+  "homepage": "https://yaodingyd.github.io/react-spot-it/"
 }
