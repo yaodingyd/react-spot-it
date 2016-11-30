@@ -34,7 +34,7 @@ class ListApp extends Component {
         <List items={this.state.items} />
         <ResultList items={this.state.result} />
         <Spinner show={this.state.showSpinner} />
-        <Warning show={this.state.showError} message={this.state.errorMessage} callbackOwner = {()=> this.setState({showError: false})}/>
+        <Warning show={this.state.showError} message={this.state.errorMessage} callbackOwner={()=> this.setState({showError: false})}/>
       </div>
     );
   }

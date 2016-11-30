@@ -13,12 +13,6 @@
   margin: 10px;
 }
 
-.modal-dialog {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-}
-
 .refresh {
     animation: spin 1s infinite ease;
 }
@@ -35,7 +29,12 @@
 
 @media print {
     @page {
-        size: landscape
+        size: letter;
+    }
+
+    html, body {
+        width: 215.9mm;
+        height: 279.4mm;
     }
 
     body * {
@@ -59,7 +58,7 @@
     }
     
     .result-array {
-        display: flex;
+        display: flex !important;
         font-size: 20px;
         border: 2px solid crimson;
         text-align: center;
@@ -83,10 +82,10 @@
     }
 
     .fifth-item {
-        position: absolute;
-        top: 50%;
+        flex: 0 0 50%;
+        position: relative;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
     }
 }
 

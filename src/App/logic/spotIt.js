@@ -69,6 +69,7 @@ function spotIt(input, callback) {
 
     for (i = 0; i < results.length; i++) {
         var flag = true;
+        //eslint-disable-next-line
         results[i].forEach(function(value) {
             if (value === undefined) {
                 flag = false;
