@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { Link } from 'react-router'
+import { LinkContainer } from 'react-router-bootstrap'
 
 class Header extends Component {
   render() {
@@ -9,13 +10,15 @@ class Header extends Component {
         <Navbar fixedTop>
             <Navbar.Header>
               <Navbar.Brand>
-                <Link to="/react-spot-it/">Spot-It Generator</Link>
+                <Link to="/">Spot-It Generator</Link>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav pullRight>
-                <NavItem eventKey={1} href="/react-spot-it/about/">About</NavItem>
+                <LinkContainer to="/about/">
+                  <NavItem eventKey={1}>About</NavItem>
+                </LinkContainer>
                 <NavItem eventKey={2} href="http://yaodingyd.github.io">Yao</NavItem>
               </Nav>
             </Navbar.Collapse>
