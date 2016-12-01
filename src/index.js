@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import App from './App';
 import About from './About';
 
@@ -9,9 +9,9 @@ import './App/css/App.css';
 
 
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/react-spot-it/" component={App} />
-    <Route path="/react-spot-it/about" component={About} />
+  <Router history={hashHistory}>
+    <Route path="/" component={App} />
+    <Route path="/about/" component={About} />
   </Router>
   ), document.getElementById('root')
 );
