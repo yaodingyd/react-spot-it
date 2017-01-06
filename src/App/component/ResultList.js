@@ -15,7 +15,7 @@ class ResultList extends Component {
                             <ListGroupItem key={id++} className="result-array">
                                 {item.map(
                                     (image, index) => (
-                                        <img src={image} key={id++} width="100" height="100" alt="" className={index !== 4 ? "result-array-item ": "result-array-item fifth-item"}/>
+                                        <img src={image} key={id++} width="100" height="100" alt="" className={(index !== 2 && item.length == 5)? "result-array-item ": "result-array-item third-item"}/>
                                     )
                                 )}
                             </ListGroupItem>

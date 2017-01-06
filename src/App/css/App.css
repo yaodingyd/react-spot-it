@@ -67,22 +67,31 @@
         flex-wrap: wrap;
         position: relative;
         flex-basis: 45%;
-        margin-bottom: 2rem;
+        margin-bottom: 3.7rem !important;
         page-break-inside: avoid;
         page-break-after: always;
-        page-break-before: avoid;
+        page-break-before: always;
         position: relative;
     }
 
     .result-array-item {
         flex: 1 0 50%;
+        padding: 5px;
         page-break-inside: avoid;
-        page-break-after: avoid;
+        page-break-after: always;
         page-break-before: avoid;
     }
 
     .fifth-item {
         flex: 0 0 50%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin-bottom: -10px;
+    }
+
+      .third-item {
+        flex: 0 0 51%;
         position: relative;
         left: 50%;
         transform: translate(-50%, 0);
